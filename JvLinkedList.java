@@ -25,11 +25,21 @@ public class JvLinkedList {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
         head.next.next.next.next = new ListNode(5);
-
+        reverseList(head);
+        System.out.println(l);
     }
 
     static ListNode reverseList(ListNode head) {
-        
+        ListNode curr = head;
+        ListNode prev = null;
+        ListNode next;
+        while (curr != null){
+            next = curr.next; 
+            prev = next;
+            next = curr;
+            curr = prev;
+        }
+        head = prev;
         return head;
     }
 
